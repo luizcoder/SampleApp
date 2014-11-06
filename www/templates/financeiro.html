@@ -1,0 +1,87 @@
+<ion-view title="Financeiro">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"><img ng-click="" src="img/logo.png"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+  </ion-nav-buttons>
+  
+  <ion-content class="has-header">      
+      <div class="panel panel-default">
+        <div class="panel-heading">Extrato de Pagamento</div>
+        <div class="panel-body">
+            <div
+                   class="list"
+                   ng-init="parcelas = [
+         {parcela:1, vencimento:'10/01/2014', valor:500.78, status: 'PAGO'},
+         {parcela:2, vencimento:'10/02/2014', valor:500.8, status: 'PAGO'},
+         {parcela:3, vencimento:'10/03/2014', valor:500.90, status: 'PAGO'},
+         {parcela:4, vencimento:'10/04/2014', valor:500.0, status: 'PAGO'},
+         {parcela:5, vencimento:'10/05/2014', valor:500.0, status: 'PAGO'},
+         {parcela:6, vencimento:'10/06/2014', valor:500.0, status: 'PAGO'},
+         {parcela:7, vencimento:'10/07/2014', valor:500.0, status: 'PAGO'},
+         {parcela:8, vencimento:'10/08/2014', valor:500.0, status: 'PAGO'},
+         {parcela:9, vencimento:'10/09/2014', valor:500.0, status: 'VENCIDA'},
+         {parcela:10, vencimento:'10/10/2014', valor:500.0, status: 'A VENCER'},
+         {parcela:11, vencimento:'10/11/2014', valor:500.0, status: 'A VENCER'},
+         {parcela:12, vencimento:'10/12/2014', valor:'', status: 'REAJUSTE'},
+         
+       
+       ]">
+
+        
+          <a class="item list-item small row custom-row" href="#" ng-repeat="parcela in parcelas">
+            <span class="center col">{{parcela.parcela}}</span>
+            <span class="center col">{{parcela.vencimento}}</span>
+            <span class="center col">
+              <span ng-if="parcela.valor>0"></span>{{parcela.valor | number:2}}
+            </span>
+            <span 
+            ng-class="{'text-success' : parcela.status=='PAGO' , 'text-danger' : parcela.status=='VENCIDA', 'text-warning' : parcela.status=='A VENCER', 'text-muted' :parcela.status=='REAJUSTE' }"
+            class="else-class center col"
+            >{{parcela.status}}</span>
+            
+          </a>
+              
+              
+             <!-- <thead>
+                 <tr>
+                   <th class="center">#</th>
+                   <th class="center">Vencimento</th>
+                   <th class="center">Valor</th>
+                   <th class="center">Status</th>
+                   <th class="center size-20"> </th>
+                 </tr>          
+             </thead>
+             <tbody>
+                 <tr ng-repeat="parcela in parcelas">
+                   <td class="center ">{{parcela.parcela}}</td>
+                   <td class="center">{{parcela.vencimento}}</td>
+                   <td class="center">
+                     <span ng-if="parcela.valor>0"></span>{{parcela.valor | number:2}}
+                   </td>
+                   <td 
+                   ng-class="{'text-success' : parcela.status=='PAGO' , 'text-danger' : parcela.status=='VENCIDA', 'text-warning' : parcela.status=='A VENCER', 'text-muted' :parcela.status=='REAJUSTE' }"
+                   class="else-class center"
+                   >{{parcela.status}}</td>
+                   <td class="">
+                     <a href="#">
+                       <i class="font-safe icon ion-more"></i>
+                     </a>
+                   </td>
+       
+                 </tr> 
+             </tbody> -->
+         
+          </div>
+       </div>
+ 
+
+       <div class="panel-footer panel-heading">Observações</div>
+       <div class="panel-body item-text-wrap justify small">
+             &nbsp Os valores do extrato estão sujeitos a alteração dependendo da taxa de correção por atraso de pagamento.<br>
+              &nbsp Os pagamentos são processados de <b>2 (dois) a 4 (quatro) DIAS ÚTEIS</b>.
+       </div>
+    </div>
+  </ion-content>
+</ion-view>
+

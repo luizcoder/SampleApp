@@ -1,30 +1,44 @@
-<ion-side-menus>
+<ion-side-menus ng-load="login();">
 
   <ion-pane ion-side-menu-content>
-    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+    <ion-nav-bar class="bar-stillos nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Voltar</ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
 
   <ion-side-menu side="left">
-    <header class="bar bar-header bar-stable">
-      <h1 class="title">Left</h1>
+    <header class="bar bar-header bar-dark">
+      <h1 class="title">Menu Principal</h1>
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item nav-clear menu-close ng-click="login()">
-          Login
+        <ion-item nav-clear menu-close href="#/app/inicio">
+          Entrar
+        </ion-item>        
+        <ion-item nav-clear menu-close href="#/app/perfil">
+          Meu Perfil
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/search">
-          Search
+        <ion-item nav-clear menu-close href="#/app/noticias">
+          Últimas noticias
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
+        <ion-item nav-clear menu-close href="#/app/financeiro">
+          Financeiro
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
+        <ion-item nav-clear menu-close href="#/app/faq">
+          FAQ
         </ion-item>
+        
+        <ion-item nav-clear menu-close ng-click="logout()" >
+          <small><i class="icon ion-log-out"></i>
+          Logout</small>
+        </ion-item>
+               
+        <ion-item nav-clear menu-close ng-click="exitApp()" >
+          <small><i class="icon ion-close"></i>
+          Fechar</small>
+        </ion-item>        
+
       </ion-list>
     </ion-content>
   </ion-side-menu>

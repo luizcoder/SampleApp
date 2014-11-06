@@ -5,7 +5,6 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
-
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -30,43 +29,128 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       controller: 'AppCtrl'
     })
 
-    .state('app.search', {
-      url: "/search",
+    .state('app.inicio', {
+      url: "/inicio",
       views: {
         'menuContent' :{
-          templateUrl: "templates/search.html"
+          templateUrl: "templates/inicio.html"
         }
       }
     })
+    
+    .state('app.perfil', {
+      url: "/perfil",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/perfil.html"
+        }
+      }
+    })
+    
+    .state('app.noticias', {
+      url: "/noticias",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/noticias.html"
+        }
+      }
+    })
+    .state('app.noticias-comentarios', {
+      url: "/noticias-comentarios",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/noticias-comentarios.html"
+        }
+      }
+    })  
+    .state('app.turma', {
+      url: "/turma",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/turma.html"
+        }
+      }
+    })
+    
+    .state('app.formando', {
+      url: "/formando",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/formando.html"
+        }
+      }
+    })
+    
+    .state('app.contato', {
+      url: "/contato",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/contato.html"
+        }
+      }
+    })
+    
+    .state('app.faq', {
+      url: "/faq",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/faq.html"
+        }
+      }
+    })
+    .state('app.faq-duvidas', {
+      url: "/faq-duvidas",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/faq-duvidas.html"
+        }
+      }
+    })
+    
+    .state('app.faq-respostas', {
+      url: "/faq-respostas",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/faq-respostas.html"
+        }
+      }
+    })      
+    .state('app.contato-history', {
+      url: "/contato-history",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/contato-history.html"
+        }
+      }
+    })    
 
-    .state('app.browse', {
-      url: "/browse",
+    .state('app.contato-chat', {
+      url: "/contato-chat",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/contato-chat.html"
+        }
+      }
+    }) 
+    .state('app.financeiro', {
+      url: "/financeiro",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/financeiro.html"
         }
       }
     })
-    .state('app.playlists', {
-      url: "/playlists",
+    
+    .state('app.pagina', {
+      url: "/pagina",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/pagina.html"
         }
-      }
-    })
-
-    .state('app.single', {
-      url: "/playlists/:playlistId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
-        }
-      }
+      }      
     });
+    
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/inicio');
 });
 
