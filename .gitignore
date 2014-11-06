@@ -1,4 +1,1 @@
-build/*
-app/node_modules/
-app/platforms/
-app/plugins/
+.cordova
